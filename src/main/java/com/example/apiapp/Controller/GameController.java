@@ -4,6 +4,7 @@ package com.example.apiapp.Controller;
 import com.example.apiapp.Model.Game;
 import com.example.apiapp.repository.GameRepository;
 import exception.ResourceNotFoundException;
+import lombok.RequiredArgsConstructor;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
