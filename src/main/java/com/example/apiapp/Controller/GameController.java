@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+
+@CrossOrigin
 @RestController
 @RequestMapping("/api/v1")
 public class GameController {
@@ -39,7 +41,7 @@ public class GameController {
 
     @PutMapping("/Games/{id}")
     public Game updateGame(@PathVariable(value = "id") Long gameID,
-                                           @Validated @RequestBody Game gameDetails) throws ResourceNotFoundException {
+                           @Validated @RequestBody Game gameDetails) throws ResourceNotFoundException {
         Game game = gameRepository.findById(gameID)
                 .orElseThrow(() -> new ResourceNotFoundException("Game not found for this id :: " + gameID));
         game.setGameName(gameDetails.getGameName());
